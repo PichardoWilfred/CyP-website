@@ -1,0 +1,12 @@
+{
+    "navigation": {
+        "services": "SERVICIOS",
+        "about": "NOSOTROS",
+        "contact": "CONTÁCTANOS"
+    },
+    "contact_info": {
+        "phone_1": "(809) 543-6038",
+        "phone_2": "(809) 724-6038",
+        "mail": "pichardoviolento@gmail.com"
+    }
+}

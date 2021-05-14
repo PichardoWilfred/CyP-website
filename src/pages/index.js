@@ -1,29 +1,34 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import Layout from "../components/layout/layout"
+import SEO from "../components/layout/seo"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+//Page Sections
+import Portrait from "../components/sections/Portrait/Portrait"
+import Contact from "../components/sections/Contact/Contact"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
-
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO />
+      <Portrait />
+      <Contact />
+    </Layout>
+  )
+}
 export default IndexPage
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["common", "index"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
