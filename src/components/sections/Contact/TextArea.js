@@ -6,7 +6,7 @@ export default function TextArea({ placeholder }) {
   return (
     <TextAreaBox>
       <NTextArea placeholder={placeholder} />
-      <Error>Error, askere</Error>
+      <Error>Error, mucho askere</Error>
     </TextAreaBox>
   )
 }
