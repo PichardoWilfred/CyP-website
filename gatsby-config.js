@@ -4,6 +4,9 @@ module.exports = {
     description: `Firma de Abogados.`,
     author: `@Null Systems`,
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -25,6 +28,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
+        path: `${__dirname}/src/locales`,
         languages: [`es`, `en`],
         defaultLanguage: `es`,
         redirect: true,

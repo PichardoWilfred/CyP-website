@@ -5,16 +5,54 @@ import Input from "./Input"
 import TextArea from "./TextArea"
 import { device } from "../../../components/layout/responsive/device"
 
+//Form handler
+import { useForm } from "react-hook-form"
+
 export default function Form(props) {
+  const { register, errors, handleSubmit } = useForm({
+    mode: "onTouched",
+  })
   return (
-    <FormLocation>
+    <FormLocation onSubmit={handleSubmit()} autoComplete="off">
       {props.children}
       <ContactForm>
-        <Input placeholder={"Nombre"}></Input>
-        <Input placeholder={"Correo Electrónico"}></Input>
-        <Input placeholder={"Teléfono"}></Input>
-        <TextArea placeholder={"Descripción"}></TextArea>
-        <SendButton type="button">ENVIAR</SendButton>
+        <Input
+          placeholder={"Nombre"}
+          name="name"
+          ref={register({
+            required: "Este campo es requerido.",
+            minLength: { value: 5, message: "Mínimo 5 caracteres." },
+            maxLength: { value: 50, message: "Máximo 50 caracteres." },
+          })}
+          err={errors.name && errors.name.message}
+        ></Input>
+        {/* <Input
+          placeholder={"Correo Electrónico"}
+          name="mail"
+          ref={register({
+            value: /^\S+@\S+$/i,
+            message: "Ingrese una dirección de correo válida.",
+          })}
+        ></Input> */}
+        {/*  <Input
+          placeholder={"Teléfono"}
+          name="phone"
+          ref={...register({
+            required: "Este campo es requerido.",
+            minLength: { value: 10, message: "Mínimo 10 caracteres." },
+            maxLength: { value: 12, message: "Máximo 12 caracteres." },
+          })}
+        ></Input>
+        <TextArea
+          placeholder={"Descripción"}
+          name="description"
+          ref={...register({
+            required: "Este campo es requerido.",
+            minLength: { value: 10, message: "Mínimo 10 caracteres." },
+            maxLength: { value: 300, message: "Máximo 300 caracteres." },
+          })}
+        ></TextArea> */}
+        <SendButton type="submit">ENVIAR</SendButton>
       </ContactForm>
     </FormLocation>
   )

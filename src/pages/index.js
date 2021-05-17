@@ -10,7 +10,7 @@ import Contact from "../components/sections/Contact/Contact"
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO />
+      {/* <SEO />  Esto no quiere responder fsr*/}
       <Portrait />
       <Contact />
     </Layout>

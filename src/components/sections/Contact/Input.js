@@ -3,11 +3,11 @@ import React from "react"
 import styled from "styled-components"
 import { device } from "../../../components/layout/responsive/device"
 
-export default function Input({ placeholder }) {
+export default function Input({ placeholder, err }) {
   return (
     <InputBox>
       <NormalInput placeholder={placeholder} />
-      <Error>Error, askere</Error>
+      <Error>{err}</Error>
     </InputBox>
   )
 }

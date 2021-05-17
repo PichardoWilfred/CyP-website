@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Null Systems <info@null-systems.com>",
   "dependencies": {
     "gatsby": "^3.1.2",
     "gatsby-background-image": "^1.5.3",
@@ -25,6 +25,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.14.2",
     "react-i18next": "^11.8.12",
     "styled-components": "^5.2.1",
     "use-is-in-viewport": "^1.0.9"

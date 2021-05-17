@@ -24,9 +24,6 @@ const Layout = ({ children }) => {
   )
 }
 
-const Main = styled.main`
-  width: 100%;
-`
 export default Layout
 
 Layout.propTypes = {
