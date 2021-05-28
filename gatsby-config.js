@@ -28,12 +28,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        path: `${__dirname}/src/locales`,
         languages: [`es`, `en`],
         defaultLanguage: `es`,
         redirect: true,
-        //creo que aún carga es porque mi PC tiene por defecto el Inglés
-        //Debo hacer que por defecto cargue el español
 
         i18nextOptions: {
           interpolation: {
@@ -66,6 +63,7 @@ module.exports = {
           "Crimson Text:200, 300,400,500,600,700",
           "Playfair Display:200, 300,400,500,600,700",
           "Lato:200, 300, 400, 500, 600, 700",
+          "Monotype Corsiva:200, 300, 400, 500, 600, 700",
         ],
       },
     },

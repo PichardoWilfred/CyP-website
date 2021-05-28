@@ -5,7 +5,7 @@ import { Trans } from "gatsby-plugin-react-i18next"
 const Example = () => {
   return (
     <Section>
-    <h3>Buenas tardes caballeros</h3>
+      <h3>Buenas tardes caballeros</h3>
       <h1>
         <Trans>saludos</Trans>
       </h1>
@@ -30,9 +30,6 @@ const Example = () => {
 
 const size = "2em"
 
-const Section = styled.section`
-  margin-left: ${size};
-  margin-top: ${size};
-`
+const Section = styled.section``
 
 export default Example

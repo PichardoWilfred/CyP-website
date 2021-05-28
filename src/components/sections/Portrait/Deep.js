@@ -1,20 +1,38 @@
 import React from "react"
 import styled from "styled-components"
+import { Trans, Link, useI18next } from "gatsby-plugin-react-i18next"
 
-import logo from "../../../images/logo.svg"
+import Logo from "../../layout/common/Logo"
 
 import { device } from "../../layout/responsive/device"
 import Info from "../../layout/common/Info"
 
 export default function Deep() {
+  const { languages, originalPath, t } = useI18next()
+
   return (
     <DeepStripe>
-      <Logo src={logo} alt="Carela Y Pichardo" />
+      <LogoLocation>
+        <Logo></Logo>
+        <LanguageList>
+          {languages.map(lng => (
+            <Link to={originalPath} language={lng}>
+              <Trans>{lng}</Trans>
+            </Link>
+          ))}
+        </LanguageList>
+      </LogoLocation>
       <Nav>
         <Nlinks>
-          <CornerLink>SERVICIOS</CornerLink>
-          <MiddleLink>NOSOTROS</MiddleLink>
-          <CornerLink>CONTACTO</CornerLink>
+          <CornerLink>
+            <Trans>SERVICIOS</Trans>
+          </CornerLink>
+          <MiddleLink>
+            <Trans>NOSOTROS</Trans>
+          </MiddleLink>
+          <CornerLink>
+            <Trans>CONTACTO</Trans>
+          </CornerLink>
         </Nlinks>
       </Nav>
       <Info mobile_visible={false}></Info>
@@ -36,20 +54,43 @@ const DeepStripe = styled.div`
     flex-wrap: wrap;
   }
 `
-const Logo = styled.img`
+const LogoLocation = styled.div`
   width: 25%;
-  padding: 8px 2px;
+  height: 100%;
   @media ${device.tablet} {
-    width: 85%;
-    padding-top: 2em;
+    width: 100%;
   }
 `
+
+const LanguageList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  list-style: none;
+  color: white;
+
+  font-size: 1rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+
+    &:nth-child(2) {
+      border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  li {
+    font-family: "Libre Baskerville";
+  }
+`
+
 // ---------------------------------------------
 
 const Nav = styled.nav`
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 0.45em;
   @media ${device.tablet} {
     display: flex;

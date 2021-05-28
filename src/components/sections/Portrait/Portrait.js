@@ -36,11 +36,11 @@ const Portrait = () => {
 
   return (
     <Section>
-      <BackgroundSection img={books}>
+      <BackgroundSection img={books} width={"100%"}>
         <Deep></Deep>
       </BackgroundSection>
       <White></White>
-      <BackgroundSection img={bonk}>
+      <BackgroundSection img={bonk} width={"100%"}>
         <Cyan></Cyan>
       </BackgroundSection>
     </Section>

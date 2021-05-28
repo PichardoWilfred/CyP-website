@@ -3,56 +3,88 @@ import styled from "styled-components"
 
 import Input from "./Input"
 import TextArea from "./TextArea"
+
+import { Trans, useI18next } from "gatsby-plugin-react-i18next"
+
 import { device } from "../../../components/layout/responsive/device"
 
 //Form handler
 import { useForm } from "react-hook-form"
 
 export default function Form(props) {
-  const { register, errors, handleSubmit } = useForm({
-    mode: "onTouched",
-  })
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm()
+
+  const { t } = useI18next()
+
+  const onSubmit = data => console.log(data)
   return (
-    <FormLocation onSubmit={handleSubmit()} autoComplete="off">
+    <FormLocation>
       {props.children}
-      <ContactForm>
+      <ContactForm onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <Input
-          placeholder={"Nombre"}
-          name="name"
-          ref={register({
-            required: "Este campo es requerido.",
-            minLength: { value: 5, message: "Mínimo 5 caracteres." },
-            maxLength: { value: 50, message: "Máximo 50 caracteres." },
+          placeholder={t("Nombre del Contacto")}
+          register={register("name", {
+            required: { value: true, message: "Este campo es obligatorio" },
+            maxLength: {
+              value: 120,
+              message: "Máximo de 120 caracteres",
+            },
+            minLength: {
+              value: 8,
+              message: "Mínimo de 8 caracteres",
+            },
           })}
           err={errors.name && errors.name.message}
         ></Input>
-        {/* <Input
-          placeholder={"Correo Electrónico"}
-          name="mail"
-          ref={register({
-            value: /^\S+@\S+$/i,
-            message: "Ingrese una dirección de correo válida.",
+        <Input
+          placeholder={t("Teléfono")}
+          register={register("phone", {
+            required: { value: true, message: "Este campo es obligatorio" },
+            maxLength: {
+              value: 12,
+              message: "Ingrese un número telefónico válido",
+            },
+            minLength: {
+              value: 10,
+              message: "Ingrese un número telefónico válido",
+            },
           })}
-        ></Input> */}
-        {/*  <Input
-          placeholder={"Teléfono"}
-          name="phone"
-          ref={...register({
-            required: "Este campo es requerido.",
-            minLength: { value: 10, message: "Mínimo 10 caracteres." },
-            maxLength: { value: 12, message: "Máximo 12 caracteres." },
+          err={errors.phone && errors.phone.message}
+          number={true}
+        ></Input>
+        <Input
+          placeholder={t("Correo electrónico")}
+          register={register("mail", {
+            required: { value: true, message: "Este campo es obligatorio" },
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Ingrese una dirección de correo válida",
+            },
           })}
+          err={errors.mail && errors.mail.message}
         ></Input>
         <TextArea
-          placeholder={"Descripción"}
-          name="description"
-          ref={...register({
-            required: "Este campo es requerido.",
-            minLength: { value: 10, message: "Mínimo 10 caracteres." },
-            maxLength: { value: 300, message: "Máximo 300 caracteres." },
+          placeholder={t("Descripción")}
+          register={register("desc", {
+            required: { value: true, message: "Este campo es obligatorio" },
+            maxLength: {
+              value: 300,
+              message: "Máximo de 300 caracteres",
+            },
+            minLength: {
+              value: 10,
+              message: "Mínimo de 10 caracteres",
+            },
           })}
-        ></TextArea> */}
-        <SendButton type="submit">ENVIAR</SendButton>
+          err={errors.desc && errors.desc.message}
+        ></TextArea>
+        <SendButton type="submit">
+          <Trans>ENVIAR</Trans>
+        </SendButton>
       </ContactForm>
     </FormLocation>
   )

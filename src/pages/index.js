@@ -6,13 +6,20 @@ import { graphql } from "gatsby"
 //Page Sections
 import Portrait from "../components/sections/Portrait/Portrait"
 import Contact from "../components/sections/Contact/Contact"
+import About from "../components/sections/About/About"
+import Footer from "../components/sections/Footer/Footer"
+
+import Example from "../components/sections/Example"
 
 const IndexPage = () => {
   return (
     <Layout>
-      {/* <SEO />  Esto no quiere responder fsr*/}
+      {/* <Example /> */}
+      <SEO />
       <Portrait />
       <Contact />
+      <About />
+      <Footer />
     </Layout>
   )
 }

@@ -1,12 +1,16 @@
 import React from "react"
-import { device } from "../../../components/layout/responsive/device"
+import { Trans } from "gatsby-plugin-react-i18next"
 import styled from "styled-components"
 
-export default function TextArea({ placeholder }) {
+import { device } from "../../../components/layout/responsive/device"
+
+export default function TextArea({ placeholder, register, err }) {
   return (
     <TextAreaBox>
-      <NTextArea placeholder={placeholder} />
-      <Error>Error, mucho askere</Error>
+      <NTextArea placeholder={placeholder} {...register} />
+      <Error>
+        <Trans>{err}</Trans>
+      </Error>
     </TextAreaBox>
   )
 }
@@ -16,10 +20,14 @@ const TextAreaBox = styled.div`
   flex-wrap: wrap;
 
   width: 100%;
+  height: 344px;
 
   font-family: "Crimson Text";
 
   margin: 0.9rem 0;
+  @media ${device.tablet} {
+    height: 270px;
+  }
 `
 const NTextArea = styled.textarea`
   font-size: min(1.5em, 22px);
@@ -55,12 +63,13 @@ const NTextArea = styled.textarea`
 `
 const Error = styled.label`
   font-size: min(0.9em, 17px);
-  color: #4b7bec;
+  font-family: "Libre Baskerville";
+  font-weight: bold;
 
   width: 100%;
 
+  color: #4b7bec;
+
   margin-top: 5px;
   margin-left: 4px;
-
-  font-weight: bold;
 `

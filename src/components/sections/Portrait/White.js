@@ -1,6 +1,7 @@
 import React from "react"
-
 import styled from "styled-components"
+import { Trans } from "gatsby-plugin-react-i18next"
+
 import artemisa from "../../../images/portrait/Artemisa.svg"
 import structure from "../../../images/portrait/Structure.svg"
 import { device } from "../../layout/responsive/device"
@@ -13,8 +14,8 @@ export default function White() {
         la identidad
       </Description>
       <Address>
-        Entrada Coconut Palms, Urb. Vista del Caribe Cabarete, Puerto Plata,
-        Rep. Dom.
+        <Trans>Entrada Coconut Palms, Urb. Vista del Caribe,</Trans>
+        {""} Cabarete, Puerto Plata, <Trans>Rep. Dom.</Trans>
       </Address>
     </WhiteStripe>
   )
@@ -65,7 +66,7 @@ const Description = styled.h1`
 
 const Address = styled.address`
   font-weight: 300;
-  width: 50%;
+  width: 40%;
   padding: 0 0em;
   font-size: 0.6em;
   @media ${device.tablet} {

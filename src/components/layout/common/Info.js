@@ -4,6 +4,8 @@ import styled from "styled-components"
 import phone from "../../../images/portrait/phone__icon.svg"
 import mail from "../../../images/portrait/mail__icon.svg"
 
+import { Trans } from "gatsby-plugin-react-i18next"
+
 import { device } from "../responsive/device"
 
 export default function Info({ mobile_visible }) {
@@ -17,7 +19,9 @@ export default function Info({ mobile_visible }) {
           mobile_size={"18px"}
         />
         <ContactTitleBody>
-          <ContactTitle>TELÉFONOS</ContactTitle>
+          <ContactTitle>
+            <Trans>TELÉFONOS</Trans>
+          </ContactTitle>
           <ContactBody>(829) 651-6034</ContactBody>
           <ContactBody>(809) 543-6038</ContactBody>
         </ContactTitleBody>
@@ -31,8 +35,10 @@ export default function Info({ mobile_visible }) {
           mobile_size={"24px"}
         />
         <ContactTitleBody>
-          <ContactTitle>CORREO ELECTRÓNICO</ContactTitle>
-          <ContactBody>info@CarelaYPichardo.com</ContactBody>
+          <ContactTitle>
+            <Trans>CORREO ELECTRÓNICO</Trans>
+          </ContactTitle>
+          <ContactBody>info@Carela&Pichardo.com</ContactBody>
         </ContactTitleBody>
       </ContactSection>
     </ContactInfo>
