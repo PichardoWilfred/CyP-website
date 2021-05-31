@@ -28,8 +28,6 @@ const Example = () => {
   )
 }
 
-const size = "2em"
-
 const Section = styled.section``
 
 export default Example

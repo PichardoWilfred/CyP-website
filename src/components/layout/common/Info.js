@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import phone from "../../../images/portrait/phone__icon.svg"
 import mail from "../../../images/portrait/mail__icon.svg"
@@ -44,7 +44,15 @@ export default function Info({ mobile_visible }) {
     </ContactInfo>
   )
 }
+const fade_in = keyframes`
+  from {
+    opacity:0;
+  }
 
+  to {
+    opacity:1;  
+  }
+`
 const ContactInfo = styled.div`
   display: ${props => (props.visible ? "none" : "flex")};
   flex-direction: column;
@@ -57,6 +65,8 @@ const ContactInfo = styled.div`
     align-items: center;
     width: 60%;
   }
+
+  animation: ${fade_in} 1s ease-out 1;
 `
 const ContactSection = styled.div`
   display: flex;
@@ -72,7 +82,6 @@ const ContactTitleBody = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
 `
-
 const ContactIcon = styled.img`
   width: ${props => props.size};
   margin-right: ${props => props.margin};
@@ -82,7 +91,6 @@ const ContactIcon = styled.img`
     margin-top: 4px;
   }
 `
-
 const ContactTitle = styled.h2`
   font-family: "Lato";
   font-size: 0.4em;

@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { device } from "../../../components/layout/responsive/device"
 import { Trans } from "gatsby-plugin-react-i18next"
 
 export default function LocationTitle() {
   return (
-    <TitleArea>
+    <TitleArea id="location">
       <Title>
         <Trans>NUESTRA UBICACIÓN</Trans>
       </Title>

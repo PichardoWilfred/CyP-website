@@ -1,11 +1,14 @@
 {
+    "Inicio": "Home",
     "es": "Español",
     "en": "English",
     "Abogados": "Law Firm",
+    "Seleccionar Idioma": "Select Language",
     "TELÉFONOS": "PHONE NUMBERS",
     "CORREO ELECTRÓNICO": "EMAIL",
     "CONTACTO": "CONTACT US",
     "SERVICIOS": "SERVICES",
+    "NUESTROS SERVICIOS": "OUR SERVICES",
     "NOSOTROS": "ABOUT",
     "SOBRE NOSOTROS": "ABOUT US",
     "UBICACIÓN": "LOCATION",
@@ -23,5 +26,6 @@
     "Mínimo de 8 caracteres": "8 characters minimum",
     "Mínimo de 10 caracteres": "10 characters minimum",
     "Ingrese un número telefónico válido": "Please enter a valid phone number",
-    "Ingrese una dirección de correo válida": "Please enter a valid email address"
+    "Ingrese una dirección de correo válida": "Please enter a valid email address",
+    "Todos los derechos reservados © 2021": "All rights reserved © 2021"
 }

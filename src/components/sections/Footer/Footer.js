@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Trans, Link, useI18next } from "gatsby-plugin-react-i18next"
+import { Link as NavLink } from "react-scroll"
 
 import phone from "../../../images/portrait/phone__icon.svg"
 import mail from "../../../images/portrait/mail__icon.svg"
@@ -11,22 +12,22 @@ import { device } from "../../../components/layout/responsive/device"
 import Logo from "../../layout/common/Logo"
 
 const Footer = () => {
-  const { languages, originalPath, t } = useI18next()
+  const { languages, originalPath } = useI18next()
   return (
     <FooterS>
       <Content>
         <LeftSide>
           <List>
-            <Item>
+            <Item to="contact" spy smooth duration={500}>
               <Trans>CONTACTO</Trans>
             </Item>
-            <Item>
+            <Item to="services" spy smooth duration={500}>
               <Trans>SERVICIOS</Trans>
             </Item>
-            <Item>
+            <Item to="about" spy smooth duration={500}>
               <Trans>NOSOTROS</Trans>
             </Item>
-            <Item>
+            <Item to="location" spy smooth duration={500}>
               <Trans>UBICACIÓN</Trans>
             </Item>
           </List>
@@ -52,14 +53,16 @@ const Footer = () => {
             </Direction2>
           </Direction>
           <FooterLocation>
-            <Logo margint={"-30px"}></Logo>
+            <Logo margint={"-30px"} size={"100%"}></Logo>
           </FooterLocation>
         </RightSide>
         {/*  */}
       </Content>
       <BottomSide>
         <Copyright>
-          <CopyrightText>Todos los derechos reservados © 2020</CopyrightText>
+          <CopyrightText>
+            <Trans>Todos los derechos reservados © 2021</Trans>
+          </CopyrightText>
         </Copyright>
         <Languages>
           <LanguageList>
@@ -104,13 +107,8 @@ const Content = styled.div`
   @media ${device.tablet} {
     padding: 0;
     font-size: min(1.5em, 25px);
-
     //Mobile Image
-    background-image: url(${background});
-    background-repeat: no-repeat;
-    background-size: 18em;
     background-position: center;
-    background-attachment: fixed;
   }
 `
 
@@ -124,8 +122,10 @@ const LeftSide = styled.div`
 `
 const List = styled.ul`
   list-style: none;
+  display: flex;
+  flex-direction: column;
 `
-const Item = styled.li`
+const Item = styled(NavLink)`
   cursor: pointer;
 
   text-decoration: none;
@@ -188,14 +188,16 @@ const Direction2 = styled.p`
   font-weight: 200;
 `
 
+//
+
 const FooterLocation = styled.div`
-  margin-top: 1em;
-  width: 12em;
+  width: 15em;
   @media ${device.tablet} {
     margin-top: 30px;
     width: 12em;
   }
 `
+//
 
 // Bottom side
 const BottomSide = styled.div`
@@ -223,9 +225,10 @@ const Copyright = styled.div`
   }
 `
 const CopyrightText = styled.p`
-  color: rgba(255, 255, 255, 0.4);
   font-weight: 300;
   font-family: "Libre Baskerville";
+  color: rgba(255, 255, 255, 0.4);
+
   @media ${device.tablet} {
     text-align: center;
   }

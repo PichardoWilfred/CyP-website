@@ -1,6 +1,8 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Trans, Link, useI18next } from "gatsby-plugin-react-i18next"
+import { Link as NavLink } from "react-scroll"
+import ReactFlagsSelect from "react-flags-select"
 
 import Logo from "../../layout/common/Logo"
 
@@ -8,29 +10,43 @@ import { device } from "../../layout/responsive/device"
 import Info from "../../layout/common/Info"
 
 export default function Deep() {
-  const { languages, originalPath, t } = useI18next()
+  const { t, changeLanguage } = useI18next()
+  function changelng(code) {
+    if (code === "US") {
+      changeLanguage("en")
+    } else {
+      changeLanguage("es")
+    }
+  }
 
   return (
     <DeepStripe>
       <LogoLocation>
         <Logo></Logo>
-        <LanguageList>
-          {languages.map(lng => (
-            <Link to={originalPath} language={lng}>
-              <Trans>{lng}</Trans>
-            </Link>
-          ))}
-        </LanguageList>
+        <LanguageListD>
+          <Select
+            className="flags-select"
+            countries={["US", "ES"]}
+            customLabels={{
+              US: "English",
+              ES: "Español",
+            }}
+            placeholder={t("Seleccionar Idioma")}
+            selectedSize={16}
+            optionSize={16}
+            onSelect={code => changelng(code)}
+          />
+        </LanguageListD>
       </LogoLocation>
       <Nav>
         <Nlinks>
-          <CornerLink>
+          <CornerLink to="services" spy smooth duration={500}>
             <Trans>SERVICIOS</Trans>
           </CornerLink>
-          <MiddleLink>
+          <MiddleLink to="about" spy smooth duration={500}>
             <Trans>NOSOTROS</Trans>
           </MiddleLink>
-          <CornerLink>
+          <CornerLink to="contact" spy smooth duration={500}>
             <Trans>CONTACTO</Trans>
           </CornerLink>
         </Nlinks>
@@ -54,9 +70,21 @@ const DeepStripe = styled.div`
     flex-wrap: wrap;
   }
 `
+
+const fade_in = keyframes`
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+  }
+`
+
 const LogoLocation = styled.div`
   width: 25%;
   height: 100%;
+  animation: ${fade_in} 1s ease-out 1;
   @media ${device.tablet} {
     width: 100%;
   }
@@ -70,12 +98,13 @@ const LanguageList = styled.ul`
   list-style: none;
   color: white;
 
-  font-size: 1rem;
+  font-size: 16px;
+  margin-top: 2px;
 
   a {
     color: white;
     text-decoration: none;
-    padding: 10px 10px;
+    padding: 5px 10px;
 
     &:nth-child(2) {
       border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -85,6 +114,37 @@ const LanguageList = styled.ul`
   li {
     font-family: "Libre Baskerville";
   }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+`
+
+const LanguageListD = styled.div`
+  display: flex;
+  justify-content: center;
+
+  font-size: 16px;
+  margin-top: 2px;
+
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+`
+
+const Select = styled(ReactFlagsSelect)`
+  button {
+    color: white;
+    border-color: white;
+    &:after {
+      border-top: 5px solid #fff;
+    }
+    &[aria-expanded="true"]:after {
+      border-bottom: 5px solid #fff;
+    }
+    span {
+      font-family: "Libre Baskerville";
+    }
+  }
 `
 
 // ---------------------------------------------
@@ -92,9 +152,8 @@ const LanguageList = styled.ul`
 const Nav = styled.nav`
   display: flex;
   font-size: 0.45em;
+  animation: ${fade_in} 1s ease-out 1;
   @media ${device.tablet} {
-    display: flex;
-    flex-direction: row;
     font-size: 1.5em;
     width: 100%;
     padding-top: 1em;
@@ -111,7 +170,7 @@ const Nlinks = styled.ul`
   }
 `
 
-const MiddleLink = styled.li`
+const MiddleLink = styled(NavLink)`
   color: #ffffff;
   padding: 1.1em 1.9em;
   border-left: solid 1.5px #ffffff;
@@ -133,7 +192,7 @@ const MiddleLink = styled.li`
   }
 `
 
-const CornerLink = styled.li`
+const CornerLink = styled(NavLink)`
   color: #ffffff;
   padding: 1.1em 1.9em;
   &:hover {

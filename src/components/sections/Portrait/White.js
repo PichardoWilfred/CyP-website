@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Trans } from "gatsby-plugin-react-i18next"
 
 import artemisa from "../../../images/portrait/Artemisa.svg"
@@ -20,6 +20,51 @@ export default function White() {
     </WhiteStripe>
   )
 }
+
+const duration = `0.8s`
+const fade_in_up = keyframes`
+  from {
+    opacity:0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity:1;  
+    transform: translateY(0);
+  }
+`
+const fade_in_bg = keyframes`
+  from {
+    opacity:0;
+    background-position: left -10em top 2em, top 0.5em right -6em;
+  }
+
+  to {
+    opacity:1;
+    background-position: left -5em top 2em, top 0.5em right -3em;
+  }
+`
+const fade_in_bgM = keyframes`
+  from {
+    opacity:0;
+    background-position: left -20em 4em no-repeat, top 0.5em  right -1em no-repeat ;
+  }
+
+  to {
+    opacity:1;
+    background-position: left -8em top 4em no-repeat, top 2em right -1em no-repeat;
+  }
+`
+
+const fade_in = keyframes`
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+  }
+`
 const WhiteStripe = styled.div`
   display: flex;
   flex-direction: row;
@@ -40,6 +85,7 @@ const WhiteStripe = styled.div`
     url(${artemisa}) top 0.5em right -3em no-repeat;
   background-size: 12em, 10em;
 
+  animation: ${fade_in_bg} ${duration} ease-out 1;
   //------------------------------------------------------------------------
   @media ${device.tablet} {
     background: url(${structure}) left -8em top 4em no-repeat,
@@ -47,10 +93,13 @@ const WhiteStripe = styled.div`
     background-size: 17em, 10em;
     padding: 7em 0em;
     height: 50%; //delete overflow-x
+
+    animation: ${fade_in_bgM} ${duration} ease-out 1;
   }
 `
 
 const Description = styled.h1`
+  animation: ${fade_in_up} ${duration} ease-out 1;
   font-size: clamp(16px, 1em, 50px);
   font-family: "Playfair Display";
   font-weight: bold;
@@ -65,6 +114,7 @@ const Description = styled.h1`
 `
 
 const Address = styled.address`
+  animation: ${fade_in} 2s ease-out;
   font-weight: 300;
   width: 40%;
   padding: 0 0em;

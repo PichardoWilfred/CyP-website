@@ -26,7 +26,7 @@ export default function Contact() {
   const lawyer = data.lawyer.childImageSharp.fluid
 
   return (
-    <Section>
+    <Section id="about">
       <Title center>
         <Trans>SOBRE NOSOTROS</Trans>
       </Title>
@@ -60,6 +60,7 @@ const Section = styled.section`
   justify-content: center;
 
   padding: 0.5em 0;
+  margin-top: 30vh;
 
   @media ${device.tablet} {
     padding: 0;
@@ -73,8 +74,10 @@ const Content = styled.div`
   margin-top: 0.5em;
 
   width: 100%;
+  height: 70vh;
   @media ${device.tablet} {
     flex-direction: column-reverse;
+    height: 40rem;
   }
 `
 
@@ -112,7 +115,7 @@ const RightDeep = styled.div`
 
 const Text = styled.p`
   color: white;
-  font-size: clamp(16px, 1em, 50px);
+  font-size: clamp(20px, 1em, 28px);
   text-align: end;
   align-self: center;
   @media ${device.tablet} {

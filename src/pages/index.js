@@ -2,22 +2,27 @@ import * as React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import { graphql } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
 
 //Page Sections
 import Portrait from "../components/sections/Portrait/Portrait"
 import Contact from "../components/sections/Contact/Contact"
+import Services from "../components/sections/Services/Service"
 import About from "../components/sections/About/About"
 import Footer from "../components/sections/Footer/Footer"
 
-import Example from "../components/sections/Example"
+//Element
+import Floating from "../components/layout/common/Floating"
 
-const IndexPage = () => {
+function IndexPage() {
+  const { t } = useI18next()
   return (
     <Layout>
-      {/* <Example /> */}
-      <SEO />
+      <SEO title={t("Inicio")} />
       <Portrait />
+      <Floating />
       <Contact />
+      <Services />
       <About />
       <Footer />
     </Layout>
