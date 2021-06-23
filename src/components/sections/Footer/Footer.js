@@ -213,7 +213,7 @@ const BottomSide = styled.div`
   @media ${device.tablet} {
     flex-wrap: nowrap;
     width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
@@ -239,7 +239,7 @@ const Languages = styled.div`
 
   width: 25%;
   @media ${device.tablet} {
-    margin-top: 15px;
+    margin-bottom: 15px;
     width: 100%;
   }
 `

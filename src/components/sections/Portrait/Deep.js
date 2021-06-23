@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { Trans, Link, useI18next } from "gatsby-plugin-react-i18next"
+import { Trans, useI18next } from "gatsby-plugin-react-i18next"
 import { Link as NavLink } from "react-scroll"
 import ReactFlagsSelect from "react-flags-select"
 
@@ -90,34 +90,34 @@ const LogoLocation = styled.div`
   }
 `
 
-const LanguageList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+// const LanguageList = styled.ul`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
 
-  list-style: none;
-  color: white;
+//   list-style: none;
+//   color: white;
 
-  font-size: 16px;
-  margin-top: 2px;
+//   font-size: 16px;
+//   margin-top: 2px;
 
-  a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
+//   a {
+//     color: white;
+//     text-decoration: none;
+//     padding: 5px 10px;
 
-    &:nth-child(2) {
-      border-left: 1px solid rgba(255, 255, 255, 0.5);
-    }
-  }
+//     &:nth-child(2) {
+//       border-left: 1px solid rgba(255, 255, 255, 0.5);
+//     }
+//   }
 
-  li {
-    font-family: "Libre Baskerville";
-  }
-  @media ${device.tablet} {
-    font-size: 20px;
-  }
-`
+//   li {
+//     font-family: "Libre Baskerville";
+//   }
+//   @media ${device.tablet} {
+//     font-size: 20px;
+//   }
+// `
 
 const LanguageListD = styled.div`
   display: flex;

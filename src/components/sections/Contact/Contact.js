@@ -18,7 +18,7 @@ export default function Contact() {
       <Location>
         <LocationTitle></LocationTitle>
         <Map
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.255761648832!2d-70.69849384068009!3d19.45020731403216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1cf5eafa08d11%3A0x6aaa2c347fc9d36c!2sParada%20Autobuses%20San%20Francisco!5e0!3m2!1ses-419!2sdo!4v1622493093093!5m2!1ses-419!2sdo"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3754.553455610545!2d-70.44625268508801!3d19.774117986691202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQ2JzI2LjgiTiA3MMKwMjYnMzguNiJX!5e0!3m2!1ses-419!2sdo!4v1622494491117!5m2!1ses-419!2sdo"
           allowfullscreen=""
           loading="lazy"
         ></Map>
@@ -42,10 +42,11 @@ const Section = styled.section`
 const Location = styled.div`
   width: 45%;
   background-color: #0c2461;
-  padding: 20px;
+  padding: 0 30px;
   @media ${device.tablet} {
     width: 100%;
     height: 100vh;
+    padding: 0 10px;
   }
 `
 
