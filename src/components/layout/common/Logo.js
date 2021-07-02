@@ -5,11 +5,11 @@ import { Trans } from "gatsby-plugin-react-i18next"
 import Image from "../../../images/logo.svg"
 import { device } from "../../layout/responsive/device"
 
-const Logo = ({ margint, size }) => {
+const Logo = ({ margint, size, footer }) => {
   return (
     <LogoDiv>
       <Img src={Image} alt="Carela Y Pichardo" h={size} />
-      <Title margint={margint}>
+      <Title margint={margint} size={footer}>
         <Trans>Abogados</Trans>
       </Title>
     </LogoDiv>
@@ -27,18 +27,21 @@ const LogoDiv = styled.div`
 const Title = styled.p`
   font-family: "Monotype Corsiva";
   font-weight: 200;
-  font-size: clamp(30px, 2rem, 50px);
+  font-size: ${props =>
+    props.size ? "clamp(30px, 3rem, 50px)" : "clamp(30px, 2rem, 50px)"};
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
 
-  margin-top: ${props => props.margint || "-35px"};
-  text-align: center;
+  margin-top: -5px;
+
   @media ${device.tablet} {
     padding-top: 10px;
+    margin-top: -15px;
   }
 `
 
 const Img = styled.img`
-  height: ${props => props.h || "140px"};
+  height: ${props => props.h || "120px"};
   width: 100%;
 `
 export default Logo

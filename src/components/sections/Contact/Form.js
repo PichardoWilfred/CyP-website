@@ -7,7 +7,7 @@ import TextArea from "./TextArea"
 //Form handler
 import emailjs from "emailjs-com"
 import { useForm } from "react-hook-form"
-import { Trans, useI18next } from "gatsby-plugin-react-i18next"
+import { useI18next } from "gatsby-plugin-react-i18next"
 
 import { device } from "../../../components/layout/responsive/device"
 
@@ -18,7 +18,7 @@ export default function Form({ children }) {
       setTimeout(resolve, ms)
     })
 
-  async function changeStyle(reset) {
+  async function changeStyle() {
     setSucess(true)
     console.log("Wey \n -----------")
     await delay(1000)
@@ -46,13 +46,6 @@ export default function Form({ children }) {
         }
       )
   }
-  const onSubmit = (data, e) => {
-    console.table(data)
-    console.log("---------------")
-    changeStyle()
-    reset()
-  }
-
   const {
     register,
     formState: { errors },

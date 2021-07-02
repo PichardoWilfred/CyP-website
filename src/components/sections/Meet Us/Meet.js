@@ -81,7 +81,7 @@ const Section = styled.section`
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-bottom: 7em;
+  margin-bottom: 4em;
   margin-top: 15vh;
 
   width: 100%;

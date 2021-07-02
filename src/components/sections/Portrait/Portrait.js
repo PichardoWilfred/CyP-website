@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 // import { Trans } from "gatsby-plugin-react-i18next"
 
 import Deep from "./Deep"
@@ -47,11 +47,22 @@ const Portrait = () => {
   )
 }
 
+const fade_in = keyframes`
+from{
+  opacity:0;
+}
+to{
+  opacity:1;
+}
+`
+
 const Section = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+
+  animation: ${fade_in} 200ms ease-in-out;
 `
 
 export default Portrait

@@ -69,7 +69,7 @@ const Footer = () => {
             </Direction2>
           </Direction>
           <FooterLocation>
-            <Logo margint={"-30px"} size={"100%"}></Logo>
+            <Logo margint={"-30px"} size={"100%"} footer></Logo>
           </FooterLocation>
         </RightSide>
         {/*  */}

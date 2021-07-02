@@ -1,8 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Trans } from "gatsby-plugin-react-i18next"
-//Email-Handler
-import emailjs from "emailjs-com"
 
 import { device } from "../../../components/layout/responsive/device"
 import Title from "../../layout/common/Title"
@@ -10,40 +8,6 @@ import LocationTitle from "./LocationTitle"
 import Form from "../Contact/Form"
 
 export default function Contact() {
-  // const [success, setSucess] = useState(false)
-
-  // const delay = ms =>
-  //   new Promise(resolve => {
-  //     setTimeout(resolve, ms)
-  //   })
-
-  // async function changeStyle(reset) {
-  //   setSucess(true)
-  //   await delay(1000)
-  //   reset()
-  //   setSucess(false)
-  // }
-
-  // const sendEmail = (data, e) => {
-  //   emailjs
-  //     .sendForm(
-  //       "service_s6w8x57",
-  //       "carelaYpichardo_temp",
-  //       e.target,
-  //       "user_t5yip53PAJkGwGOXpZlxf"
-  //     )
-  //     .then(
-  //       () => {
-  //         e.target.reset()
-  //         changeStyle()
-  //         console.log("Todo nítido mi hermano 👍")
-  //       },
-  //       error => {
-  //         console.log("JeJe", error)
-  //       }
-  //     )
-  // }
-
   return (
     <Section id="contact">
       <Form>
@@ -71,7 +35,6 @@ const Section = styled.section`
 
   @media ${device.tablet} {
     padding: 0;
-    padding-top: 2em;
     height: 100%;
   }
 `
