@@ -2,15 +2,16 @@ import React from "react"
 
 import BackgroundImage from "gatsby-background-image"
 
-const BackgroundSection = props => {
+const BackgroundSection = ({ children, width, img }) => {
   return (
     <BackgroundImage
-      style={{ width: props.width, height: "100%" }}
+      style={{ width: width, height: "100%" }}
       Tag="div"
-      fluid={props.img}
+      fluid={img}
       backgroundColor={`#040e18`}
+      alt="image"
     >
-      {props.children}
+      {children}
     </BackgroundImage>
   )
 }

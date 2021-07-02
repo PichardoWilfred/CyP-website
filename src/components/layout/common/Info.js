@@ -17,6 +17,7 @@ export default function Info({ mobile_visible }) {
           size={"14px"}
           margin={"20px"}
           mobile_size={"18px"}
+          alt="phone icon"
         />
         <ContactTitleBody>
           <ContactTitle>
@@ -33,6 +34,7 @@ export default function Info({ mobile_visible }) {
           size={"21px"}
           margin={"12px"}
           mobile_size={"24px"}
+          alt="mail icon"
         />
         <ContactTitleBody>
           <ContactTitle>

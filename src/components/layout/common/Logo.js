@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { Trans } from "gatsby-plugin-react-i18next"
 
-import Image from "../../../images/Recurso 42.svg"
+import Image from "../../../images/logo.svg"
 import { device } from "../../layout/responsive/device"
 
 const Logo = ({ margint, size }) => {
   return (
     <LogoDiv>
-      <Img src={Image} alt="Carela Y Pichardo" altura={size} />
+      <Img src={Image} alt="Carela Y Pichardo" h={size} />
       <Title margint={margint}>
         <Trans>Abogados</Trans>
       </Title>
@@ -38,7 +38,7 @@ const Title = styled.p`
 `
 
 const Img = styled.img`
-  height: ${props => props.altura || "140px"};
+  height: ${props => props.h || "140px"};
   width: 100%;
 `
 export default Logo

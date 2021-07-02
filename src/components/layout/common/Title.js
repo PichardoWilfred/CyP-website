@@ -4,7 +4,7 @@ import useIsInViewport from "use-is-in-viewport"
 
 import { device } from "../../../components/layout/responsive/device"
 
-function Title(props) {
+function Title({ center, limit, children }) {
   const [isInViewport, reference] = useIsInViewport({ threshold: 50 })
   const [wasInViewportAtleastOnce, setWasInViewportAtleastOnce] = useState(
     isInViewport
@@ -21,18 +21,19 @@ function Title(props) {
   }, [isInViewport]) //
 
   return (
-    <TitleBox center={props.center}>
+    <TitleBox center={center}>
       <TitleSpace
         ref={reference}
         viewport={wasInViewportAtleastOnce}
-        center={props.center}
+        center={center}
       >
         <Space
           ref={reference}
           viewport={wasInViewportAtleastOnce}
-          center={props.center}
+          center={center}
+          limit={limit}
         >
-          <MainTitle>{props.children}</MainTitle>
+          <MainTitle>{children}</MainTitle>
         </Space>
       </TitleSpace>
     </TitleBox>
@@ -119,7 +120,6 @@ const center_cyan = css`
 `
 
 const TitleSpace = styled.div`
-  margin-top: 2.3em;
   &:after {
     content: "";
     margin-top: 4px;
@@ -167,7 +167,9 @@ const Space = styled.div`
   }
   @media ${device.tablet} {
     &:after {
-      width: 100%;
+      margin: 0 auto;
+      width: ${props => props.limit && "90%"};
+      /* width: 90%; */
       height: 2px;
     }
   }

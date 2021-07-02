@@ -60,7 +60,7 @@ const Section = styled.section`
   justify-content: center;
 
   padding: 0.5em 0;
-  margin-top: 30vh;
+  margin-top: 15vh;
 
   @media ${device.tablet} {
     padding: 0;

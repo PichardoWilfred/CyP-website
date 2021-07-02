@@ -1,11 +1,11 @@
 import * as React from "react"
 
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+import Seo from "../components/layout/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO />
+    <Seo />
     <h1>404: Not Found</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </Layout>

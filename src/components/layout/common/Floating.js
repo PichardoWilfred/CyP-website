@@ -12,7 +12,7 @@ function Floating() {
         scroll.scrollToTop()
       }}
     >
-      <Logo src={src} />
+      <Logo src={src} alt="logoFloating" />
     </Button>
   )
 }
@@ -23,7 +23,7 @@ const Button = styled.div`
   bottom: 40px;
   right: 40px;
 
-  z-index: 3;
+  z-index: 2;
 
   width: 100px;
   height: 100px;

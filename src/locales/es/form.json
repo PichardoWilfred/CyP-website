@@ -1,0 +1,15 @@
+{
+    "Nombre del Contacto": "Nombre del Contacto",
+    "Teléfono": "Teléfono",
+    "Correo electrónico": "Correo electrónico",
+    "Descripción": "Descripción",
+    "ENVIAR": "ENVIAR",
+    "Este campo es obligatorio": "Este campo es obligatorio",
+    "Máximo de 120 caracteres": "Máximo de 120 caracteres",
+    "Máximo de 300 caracteres": "Máximo de 300 caracteres",
+    "Mínimo de 8 caracteres": "Mínimo de 8 caracteres",
+    "Mínimo de 10 caracteres": "Mínimo de 10 caracteres",
+    "Ingrese un número telefónico válido": "Ingrese un número telefónico válido",
+    "Ingrese una dirección de correo válida": "Ingrese una dirección de correo válida",
+    "Todos los derechos reservados © 2021": "Todos los derechos reservados © 2021"
+}

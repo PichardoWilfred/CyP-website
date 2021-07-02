@@ -13,36 +13,52 @@ import Logo from "../../layout/common/Logo"
 
 const Footer = () => {
   const { languages, originalPath } = useI18next()
+
+  const page_sections = [
+    {
+      section: "contact",
+      title: "CONTACTO",
+    },
+    {
+      section: "services",
+      title: "SERVICIOS",
+    },
+    {
+      section: "about",
+      title: "NOSOTROS",
+    },
+    {
+      section: "meet",
+      title: "REPRESENTANTES",
+    },
+  ]
+
   return (
     <FooterS>
       <Content>
         <LeftSide>
           <List>
-            <Item to="contact" spy smooth duration={500}>
-              <Trans>CONTACTO</Trans>
-            </Item>
-            <Item to="services" spy smooth duration={500}>
-              <Trans>SERVICIOS</Trans>
-            </Item>
-            <Item to="about" spy smooth duration={500}>
-              <Trans>NOSOTROS</Trans>
-            </Item>
-            <Item to="location" spy smooth duration={500}>
-              <Trans>UBICACIÓN</Trans>
-            </Item>
+            {page_sections.map(({ section, title }, index) => {
+              return (
+                <Item to={section} spy smooth duration={500} key={index}>
+                  <PageSection>
+                    <Trans>{title}</Trans>
+                  </PageSection>
+                </Item>
+              )
+            })}
           </List>
           <FooterInfo>
             <IconText>
-              <Icon src={phone} size={"18px"} />
+              <Icon src={phone} size={"18px"} alt="phone" />
               <Text>(809) 426-0656</Text>
             </IconText>
             <IconText>
-              <Icon src={mail} size={"21px"} />
+              <Icon src={mail} size={"21px"} alt="mail" />
               <Text>info@Carela&Pichardo.com</Text>
             </IconText>
           </FooterInfo>
         </LeftSide>
-        {/*        */}
         <RightSide>
           <Direction>
             <Direction1>
@@ -66,8 +82,8 @@ const Footer = () => {
         </Copyright>
         <Languages>
           <LanguageList>
-            {languages.map(lng => (
-              <Link to={originalPath} language={lng}>
+            {languages.map((lng, index) => (
+              <Link to={originalPath} language={lng} key={index}>
                 <Trans>{lng}</Trans>
               </Link>
             ))}
@@ -91,7 +107,7 @@ const Content = styled.div`
   width: 100%;
 
   padding: 1.5em 1.2em;
-  margin-top: 30em;
+  /* margin-top: 30em; */
 
   background-color: #0c2461;
   color: white;
@@ -120,11 +136,15 @@ const LeftSide = styled.div`
     width: 100%;
   }
 `
+
 const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
 `
+
+const PageSection = styled.li``
+
 const Item = styled(NavLink)`
   cursor: pointer;
 
@@ -137,6 +157,7 @@ const Item = styled(NavLink)`
     border-bottom: 1.5px solid white;
   }
 `
+
 const FooterInfo = styled.div`
   margin-top: 30px;
 
@@ -157,6 +178,8 @@ const Icon = styled.img`
 `
 const Text = styled.p`
   margin-left: 18px;
+  font-weight: 100;
+  /* font-family: "Lato"; */
 `
 // Right side
 const RightSide = styled.div`
@@ -187,8 +210,6 @@ const Direction1 = styled.p`
 const Direction2 = styled.p`
   font-weight: 200;
 `
-
-//
 
 const FooterLocation = styled.div`
   width: 15em;
