@@ -179,7 +179,6 @@ const Icon = styled.img`
 const Text = styled.p`
   margin-left: 18px;
   font-weight: 100;
-  /* font-family: "Lato"; */
 `
 // Right side
 const RightSide = styled.div`

@@ -15,7 +15,7 @@ const CyanStripe = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 28vh;
+  height: 8em;
   background-color: rgba(45, 152, 218, 0.5);
 
   @media ${device.tablet} {

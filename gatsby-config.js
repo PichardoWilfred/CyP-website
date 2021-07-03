@@ -60,11 +60,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          "Crimson Text:200, 300,400,500,600,700",
-          "Playfair Display:200, 300,400,500,600,700",
-          "Lato:200, 300, 400, 500, 600, 700",
-          "Monotype Corsiva:200, 300, 400, 500, 600, 700",
+          "Crimson Text:200,300,400,500,600,700",
+          "Playfair Display:200,300,400,500,600,700",
+          "Lato:200,300,400,500,600,700",
+          "Charm:200,300,400,500,600,700",
         ],
+        display: "block",
       },
     },
   ],

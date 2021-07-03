@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Crimson Text', sans-serif;
     margin: 0;
     padding: 0;
+    
 
   }
   section {

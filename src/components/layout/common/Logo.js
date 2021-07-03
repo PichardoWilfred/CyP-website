@@ -18,6 +18,7 @@ const Logo = ({ margint, size, footer }) => {
 
 const LogoDiv = styled.div`
   width: 100%;
+  height: auto;
   padding: 0 10px;
   margin-top: 15px;
   @media ${device.tablet} {
@@ -25,14 +26,14 @@ const LogoDiv = styled.div`
   }
 `
 const Title = styled.p`
-  font-family: "Monotype Corsiva";
-  font-weight: 200;
+  font-family: "Charm", "Playfair Display", "Crimson Text";
+  font-weight: 100;
   font-size: ${props =>
-    props.size ? "clamp(30px, 3rem, 50px)" : "clamp(30px, 2rem, 50px)"};
+    props.size ? "clamp(30px, 3rem, 50px)" : "clamp(20px, 1.5rem, 50px)"};
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
 
-  margin-top: -5px;
+  margin-top: -12px;
 
   @media ${device.tablet} {
     padding-top: 10px;

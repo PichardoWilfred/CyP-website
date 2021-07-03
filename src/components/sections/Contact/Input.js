@@ -7,7 +7,12 @@ import { Trans } from "gatsby-plugin-react-i18next"
 export default function Input({ placeholder, err, register, number }) {
   return (
     <InputBox>
-      <NormalInput placeholder={placeholder} type={number} {...register} />
+      <NormalInput
+        placeholder={placeholder}
+        type={number}
+        {...register}
+        err={err}
+      />
       <Error>
         <Trans>{err}</Trans>
       </Error>

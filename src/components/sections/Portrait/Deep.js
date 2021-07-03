@@ -75,7 +75,7 @@ export default function Deep() {
 const DeepStripe = styled.div`
   display: flex;
   width: 100%;
-  height: 25vh;
+  height: 25%;
 
   background-color: rgba(56, 103, 214, 0.65);
   justify-content: space-between;
@@ -101,9 +101,12 @@ const fade_in = keyframes`
 const LogoLocation = styled.div`
   width: 25%;
   height: 100%;
+
+  margin-bottom: 0.2em;
   animation: ${fade_in} 1s ease-out 1;
   @media ${device.tablet} {
     width: 100%;
+    margin-bottom: 0;
   }
 `
 
@@ -144,7 +147,7 @@ const Nav = styled.nav`
   @media ${device.tablet} {
     font-size: 1.5em;
     width: 100%;
-    padding-top: 1em;
+    padding-top: 0.1em;
   }
 `
 

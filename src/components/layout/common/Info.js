@@ -67,7 +67,7 @@ const ContactInfo = styled.div`
     align-items: center;
     width: 60%;
   }
-
+  margin-left: 15px;
   animation: ${fade_in} 1s ease-out 1;
 `
 const ContactSection = styled.div`
@@ -95,7 +95,7 @@ const ContactIcon = styled.img`
 `
 const ContactTitle = styled.h2`
   font-family: "Lato";
-  font-size: 0.4em;
+  font-size: clamp(2px, 0.4em, 50px);
   font-weight: 600;
 
   color: white;
